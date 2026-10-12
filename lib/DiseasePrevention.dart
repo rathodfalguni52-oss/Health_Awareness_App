@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:health_awareness_app/HygieneSanitation.dart';
 import 'dart:async';
 import 'package:health_awareness_app/main.dart';
 
@@ -54,20 +55,26 @@ class _DiseasePreventionState extends State<DiseasePrevention>
                   )
                 ],
               ),
-              Card(
-                shadowColor: Colors.grey,
-                child: ListTile(
-                  leading: CircleAvatar(
-                    child: Icon(Icons.clean_hands,color: Colors.green,size: 35),
-                  ),
-                  title:Text("Hygiene & Sanitation",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Hygienesanitation())
+                  );
+                },
+                child: Card(//hygiene and sanitation
+                  shadowColor: Colors.grey,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      child: Icon(Icons.clean_hands,color: Colors.green,size: 35),
                     ),
+                    title:Text("Hygiene & Sanitation",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    subtitle:Text("Good hygiene keeps you healthy and safe.") ,
+                    trailing: Icon(Icons.navigate_next,color: Colors.grey,size: 50),
                   ),
-                  subtitle:Text("Good hygiene keeps you healthy and safe.") ,
-                  trailing: Icon(Icons.navigate_next,color: Colors.grey,size: 50),
                 ),
               ),
               Card(
@@ -124,10 +131,10 @@ class _DiseasePreventionState extends State<DiseasePrevention>
                   children: [
                     Padding(padding: EdgeInsetsGeometry.all(10),
                       child: Icon(Icons.shield,color: Color(0xFF2E7D32),size: 50,)),
-                    Text("Regular health checkups help in early detection and prevention.",
+                    Text("Regular health checkups help \n in early detection and prevention.",
                     style: TextStyle(
                       color: Color(0xFF2E7D32),
-                    ),)
+                    ),),
                   ],
                 ),
               )

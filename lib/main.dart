@@ -111,132 +111,137 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            width: double.infinity,
-            height: 123,
-            color: Colors.blue,
+          Expanded(
+            flex: 1,
+            child: Container(
+              width: double.infinity,
+              color: Colors.blue,
+            ),
           ),
-          Container(//Main Container 
-            width: double.infinity,
-            height: 492,
-            color: Colors.white,
-            child: Column(
-              children: [
+          Expanded(
+            flex: 3,
+              child: Container(//Main Container
+              width: double.infinity,
+              color: Colors.white,
+              child: Column(
+                children: [
                 Container(//Cards
-                  child:Padding(padding: EdgeInsetsGeometry.all(15),
-                  child:  Column(
-                    children: [
-                      Row(//Quick Access for cards
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        //crossAxisAlignment: CrossAxisAlignment.baseline,
+                    child:Padding(padding: EdgeInsetsGeometry.all(15),
+                      child:  Column(
                         children: [
-                          Text("Quick Access"),
-                          RichText(text: TextSpan(
-                              text: "View all",
-                              style: TextStyle(
-                                  color: Color(0xFF4CAF50),
-                                  fontWeight: FontWeight.bold
+                          Row(//Quick Access for cards
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            //crossAxisAlignment: CrossAxisAlignment.baseline,
+                            children: [
+                              Text("Quick Access"),
+                              RichText(text: TextSpan(
+                                  text: "View all",
+                                  style: TextStyle(
+                                      color: Color(0xFF4CAF50),
+                                      fontWeight: FontWeight.bold
+                                  ),
+                                  recognizer: TapGestureRecognizer()..onTap=(){
+                                    Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage())
+                                    );
+                                  }
                               ),
-                              recognizer: TapGestureRecognizer()..onTap=(){
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage())
-                                );
-                              }
+                              )
+                            ],
                           ),
-                          )
+                          // Row(//cards
+                          //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //   children: [
+                          //     InkWell(
+                          //       onTap: (){
+                          //         Navigator.push(context, MaterialPageRoute(builder: (context)=>NutritionTips())
+                          //         );
+                          //       },
+                          //       child: Card(//nutrition tip
+                          //           shadowColor: Colors.grey,
+                          //           elevation: 5,
+                          //           child: Padding(padding: EdgeInsetsGeometry.only(right: 30,left: 30,top: 10,bottom: 10),
+                          //             child: Column(
+                          //               children: [
+                          //                 CircleAvatar(
+                          //                   child: Icon(Icons.apple,color: Colors.green,),
+                          //                   backgroundColor: Colors.greenAccent,
+                          //                 ),
+                          //                 SizedBox(height: 10),
+                          //                 Text("Nutrition"),
+                          //                 Text("Tips")
+                          //               ],
+                          //             ),
+                          //           )
+                          //       ),
+                          //     ),
+                          //     Card(//Excercise Guide
+                          //         shadowColor: Colors.grey,
+                          //         elevation: 5,
+                          //         child: Padding(padding: EdgeInsetsGeometry.only(right: 30,left: 30,top: 10,bottom: 10),
+                          //           child: Column(
+                          //             children: [
+                          //               CircleAvatar(
+                          //                 child: Icon(Icons.run_circle_outlined,color: Colors.green,),
+                          //                 backgroundColor: Colors.greenAccent,
+                          //               ),
+                          //               SizedBox(height: 10),
+                          //               Text("Exercise"),
+                          //               Text("Guide")
+                          //             ],
+                          //           ),
+                          //         )
+                          //     ),
+                          //     Card(//mental wellness
+                          //         shadowColor: Colors.grey,
+                          //         elevation: 5,
+                          //         child: Padding(padding: EdgeInsetsGeometry.only(right: 30,left: 30,top: 10,bottom: 10),
+                          //           child: Column(
+                          //             children: [
+                          //               CircleAvatar(
+                          //                 child: Icon(Icons.face,color: Colors.green,),
+                          //                 backgroundColor: Colors.greenAccent,
+                          //               ),
+                          //               SizedBox(height: 10),
+                          //               Text("Mental"),
+                          //               Text("Wellness")
+                          //             ],
+                          //           ),
+                          //         )
+                          //     ),
+                          //     InkWell(
+                          //       onTap: (){
+                          //         Navigator.push(context, MaterialPageRoute(builder: (context)=>DiseasePrevention())
+                          //         );
+                          //       },
+                          //       child: Card(//disease prevention
+                          //           shadowColor: Colors.grey,
+                          //           elevation: 5,
+                          //           child: Padding(padding: EdgeInsetsGeometry.only(right: 30,left: 30,top: 10,bottom: 10),
+                          //             child: Column(
+                          //               children: [
+                          //                 CircleAvatar(
+                          //                   child: Icon(Icons.health_and_safety_rounded,color: Colors.green,),
+                          //                   backgroundColor: Colors.greenAccent,
+                          //                 ),
+                          //                 SizedBox(height: 10),
+                          //                 Text("Disease"),
+                          //                 Text("Prevention")
+                          //               ],
+                          //             ),
+                          //           )
+                          //       ),
+                          //     ),
+                          //   ],
+                          // ),
+
                         ],
                       ),
-                      Row(//cards
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>NutritionTips())
-                              );
-                            },
-                            child: Card(//nutrition tip
-                                shadowColor: Colors.grey,
-                                elevation: 5,
-                                child: Padding(padding: EdgeInsetsGeometry.only(right: 30,left: 30,top: 10,bottom: 10),
-                                  child: Column(
-                                    children: [
-                                      CircleAvatar(
-                                        child: Icon(Icons.apple,color: Colors.green,),
-                                        backgroundColor: Colors.greenAccent,
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text("Nutrition"),
-                                      Text("Tips")
-                                    ],
-                                  ),
-                                )
-                            ),
-                          ),
-                          Card(//Excercise Guide
-                              shadowColor: Colors.grey,
-                              elevation: 5,
-                              child: Padding(padding: EdgeInsetsGeometry.only(right: 30,left: 30,top: 10,bottom: 10),
-                                child: Column(
-                                  children: [
-                                    CircleAvatar(
-                                      child: Icon(Icons.run_circle_outlined,color: Colors.green,),
-                                      backgroundColor: Colors.greenAccent,
-                                    ),
-                                    SizedBox(height: 10),
-                                    Text("Exercise"),
-                                    Text("Guide")
-                                  ],
-                                ),
-                              )
-                          ),
-                          Card(//mental wellness
-                              shadowColor: Colors.grey,
-                              elevation: 5,
-                              child: Padding(padding: EdgeInsetsGeometry.only(right: 30,left: 30,top: 10,bottom: 10),
-                                child: Column(
-                                  children: [
-                                    CircleAvatar(
-                                      child: Icon(Icons.face,color: Colors.green,),
-                                      backgroundColor: Colors.greenAccent,
-                                    ),
-                                    SizedBox(height: 10),
-                                    Text("Mental"),
-                                    Text("Wellness")
-                                  ],
-                                ),
-                              )
-                          ),
-                          InkWell(
-                            onTap: (){
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=>DiseasePrevention())
-                              );
-                            },
-                            child: Card(//disease prevention
-                                shadowColor: Colors.grey,
-                                elevation: 5,
-                                child: Padding(padding: EdgeInsetsGeometry.only(right: 30,left: 30,top: 10,bottom: 10),
-                                  child: Column(
-                                    children: [
-                                      CircleAvatar(
-                                        child: Icon(Icons.health_and_safety_rounded,color: Colors.green,),
-                                        backgroundColor: Colors.greenAccent,
-                                      ),
-                                      SizedBox(height: 10),
-                                      Text("Disease"),
-                                      Text("Prevention")
-                                    ],
-                                  ),
-                                )
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  )
+                    )
                 ),
 
               ],
             ),
+          )
           )
         ],
       )
