@@ -156,84 +156,19 @@ class _MyHomePageState extends State<MyHomePage> {
                                   Navigator.push(context, MaterialPageRoute(builder: (context)=>NutritionTips())
                                   );
                                 },
-                                child: Card(//nutrition tip
-                                    shadowColor: Colors.grey,
-                                    elevation: 5,
-                                    child: Padding(padding: EdgeInsetsGeometry.only(right: 10,left: 10,top: 10,bottom: 10),
-                                      child: Column(
-                                        children: [
-                                          CircleAvatar(
-                                            child: Icon(Icons.apple,color: Colors.green,),
-                                            backgroundColor: Colors.greenAccent,
-                                          ),
-                                          // SizedBox(height: 10),
-                                          Text("Nutrition"),
-                                          Text("Tips")
-                                        ],
-                                      ),
-                                    )
-                                ),
+                                child:tabs('Nutrition \n    Tips',Icons.apple )
                               ),
-                              Card(//Excercise Guide
-                                  shadowColor: Colors.grey,
-                                  elevation: 5,
-                                  child: Padding(padding: EdgeInsetsGeometry.only(right: 10,left: 10,top: 10,bottom: 10),
-                                    child: Column(
-                                      children: [
-                                        CircleAvatar(
-                                          child: Icon(Icons.run_circle_outlined,color: Colors.green,),
-                                          backgroundColor: Colors.greenAccent,
-                                        ),
-                                        // SizedBox(height: 3),
-                                        Text("Exercise"),
-                                        Text("Guide")
-                                      ],
-                                    ),
-                                  )
-                              ),
-                              Card(//mental wellness
-                                  shadowColor: Colors.grey,
-                                  elevation: 5,
-                                  child: Padding(padding: EdgeInsetsGeometry.only(right: 10,left: 10,top: 10,bottom: 10),
-                                    child: Column(
-                                      children: [
-                                        CircleAvatar(
-                                          child: Icon(Icons.face,color: Colors.green,),
-                                          backgroundColor: Colors.greenAccent,
-                                        ),
-                                        // SizedBox(height: 5),
-                                        Text("Mental"),
-                                        Text("Wellness")
-                                      ],
-                                    ),
-                                  )
-                              ),
+                              tabs('Excercise \n    Guide', Icons.fitness_center),
+                              tabs('  Mental\nWellness', Icons.face),
                               InkWell(
                                 onTap: (){
                                   Navigator.push(context, MaterialPageRoute(builder: (context)=>DiseasePrevention())
                                   );
                                 },
-                                child: Card(//disease prevention
-                                    shadowColor: Colors.grey,
-                                    elevation: 5,
-                                    child: Padding(padding: EdgeInsetsGeometry.only(right: 10,left: 10,top: 10,bottom: 10),
-                                      child: Column(
-                                        children: [
-                                          CircleAvatar(
-                                            child: Icon(Icons.health_and_safety_rounded,color: Colors.green,),
-                                            backgroundColor: Colors.greenAccent,
-                                          ),
-                                          // SizedBox(height: 10),
-                                          Text("Disease"),
-                                          Text("Prevention")
-                                        ],
-                                      ),
-                                    )
-                                ),
+                                child: tabs('  Disease\nPrevention', Icons.health_and_safety)
                               ),
                             ],
                           ),
-
                         ],
                       ),
                     )
@@ -244,6 +179,32 @@ class _MyHomePageState extends State<MyHomePage> {
           )
           )
         ],
+      )
+    );
+  }
+  Widget tabs(String name,IconData icon)
+  {
+    return Card(
+      shadowColor: Colors.grey,
+      elevation: 5,
+      child:Padding(padding: EdgeInsetsGeometry.only(right: 10,left: 10,top: 10,bottom: 10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Container(
+            child: Icon(icon,
+            color: Colors.green,
+            size: 30),
+            height: 35,
+            width: 35,
+            decoration: BoxDecoration(
+                color: Color(0xFFC8F8CA),
+                borderRadius: BorderRadiusGeometry.circular(20)
+            ),
+          ),
+          Text(name)
+        ],
+      ),
       )
     );
   }

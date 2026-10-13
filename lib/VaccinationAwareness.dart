@@ -50,38 +50,10 @@ class _VaccinationAwarenessState extends State<Vaccinationawareness>
               ),
               ),
               SizedBox(height: 5),
-              Card(
-                color: Color(0xCBF5FCFC),
-                child: ListTile(
-                  leading: Icon(CupertinoIcons.check_mark_circled_solid,
-                  color: Colors.blue),
-                  title: Text('Keep your vaccine schedule up to date.'),
-                ),
-              ),
-              Card(
-                color: Color(0xCBF5FCFC),
-                child: ListTile(
-                  leading: Icon(CupertinoIcons.check_mark_circled_solid,
-                      color: Colors.blue),
-                  title: Text('Be aware of recommended vaccines for all age groups.'),
-                ),
-              ),
-              Card(
-                color: Color(0xCBF5FCFC),
-                child: ListTile(
-                  leading: Icon(CupertinoIcons.check_mark_circled_solid,
-                      color: Colors.blue),
-                  title: Text('Follow your doctor advice and get vaccinated.'),
-                ),
-              ),
-              Card(
-                color: Color(0xCBF5FCFC),
-                child: ListTile(
-                  leading: Icon(CupertinoIcons.check_mark_circled_solid,
-                      color: Colors.blue),
-                  title: Text('Encourage your family and friends to get vaccinated.'),
-                ),
-              ),
+              infoCards('Keep your vaccine schedule up to date.'),
+              infoCards('Be aware of recommended vaccines for all age groups.'),
+              infoCards('Follow your doctor advice and get vaccinated.'),
+              infoCards('Encourage your family and friends to get vaccinated.'),
               SizedBox(height: 8,),
               Card(
                 color: Color(0xCBF5FCFC),
@@ -100,6 +72,19 @@ class _VaccinationAwarenessState extends State<Vaccinationawareness>
             ],
           ),
         ),
+      ),
+    );
+  }
+
+  Widget infoCards(String text)
+  {
+    return Card(
+      color: Color(0xCBF5FCFC),
+      child: ListTile(
+        leading: Icon(CupertinoIcons.check_mark_circled_solid,
+          color: Colors.blue,
+        ),
+        title: Text(text),
       ),
     );
   }
