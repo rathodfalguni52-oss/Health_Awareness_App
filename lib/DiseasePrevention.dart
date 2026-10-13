@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:health_awareness_app/HygieneSanitation.dart';
+import 'package:health_awareness_app/VaccinationAwareness.dart';
 import 'dart:async';
 import 'package:health_awareness_app/main.dart';
 
@@ -77,20 +78,26 @@ class _DiseasePreventionState extends State<DiseasePrevention>
                   ),
                 ),
               ),
-              Card(
-                shadowColor: Colors.grey,
-                child: ListTile(
-                  leading: CircleAvatar(
-                    child: Icon(Icons.vaccines,color: Colors.blue,size: 35),
-                  ),
-                  title:Text("Vaccination Awareness",
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold
+              InkWell(
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Vaccinationawareness())
+                  );
+                },
+                child: Card(
+                  shadowColor: Colors.grey,
+                  child: ListTile(
+                    leading: CircleAvatar(
+                      child: Icon(Icons.vaccines,color: Colors.blue,size: 35),
                     ),
+                    title:Text("Vaccination Awareness",
+                      style: TextStyle(
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold
+                      ),
+                    ),
+                    subtitle:Text("Vaccines Protect you from serious disease.") ,
+                    trailing: Icon(Icons.navigate_next,color: Colors.grey,size: 50),
                   ),
-                  subtitle:Text("Vaccines Protect you from serious disease.") ,
-                  trailing: Icon(Icons.navigate_next,color: Colors.grey,size: 50),
                 ),
               ),
               Card(
